@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://chronvas.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://chronvas.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://chronvas.github.io/" rel="alternate" type="text/html" /><updated>2016-12-04T11:29:51+02:00</updated><id>http://chronvas.github.io/</id><subtitle>Moon is a minimal, one column jekyll theme for your blog.</subtitle><entry><title type="html">Realm for Android, pre-populating from Json and extracting the database</title><link href="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/" rel="alternate" type="text/html" title="Realm for Android, pre-populating from Json and extracting the database" /><published>2016-08-01T00:00:00+03:00</published><updated>2016-08-01T00:00:00+03:00</updated><id>http://chronvas.github.io/Realm for Android, pre-populating from Json and extracting the database</id><content type="html" xml:base="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/">&lt;p&gt;Scroll to read, or continue reding in &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://chronvas.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://chronvas.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://chronvas.github.io/" rel="alternate" type="text/html" /><updated>2016-12-04T11:33:10+02:00</updated><id>http://chronvas.github.io/</id><subtitle>Moon is a minimal, one column jekyll theme for your blog.</subtitle><entry><title type="html">Realm for Android, pre-populating from Json and extracting the database</title><link href="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/" rel="alternate" type="text/html" title="Realm for Android, pre-populating from Json and extracting the database" /><published>2016-08-01T00:00:00+03:00</published><updated>2016-08-01T00:00:00+03:00</updated><id>http://chronvas.github.io/Realm for Android, pre-populating from Json and extracting the database</id><content type="html" xml:base="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/">&lt;p&gt;Scroll to read, or continue reding in &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve came across the “hustle” of creating an app that will use Realm, having the database previously populated with data and just include the created database file in the published app, omitting the Json (or any other file) that is being used to populate it.&lt;/p&gt;
 
@@ -223,7 +223,7 @@ public class RealmImporter {
 
 &lt;h3 id=&quot;now-where-is-my-realm-database-file&quot;&gt;Now, where is my .realm database file?&lt;/h3&gt;
 
-&lt;p&gt;Once you run the application to a device, in Android Studio go to Tools&amp;gt;Android&amp;gt;Android Device Monitor, under the “ Data / Data / &lt;Package Name=&quot;&quot;&gt; / files ” directory you can find the .realm file and pull it to your computer.&lt;/Package&gt;&lt;/p&gt;
+&lt;p&gt;Once you run the application to a device, in Android Studio go to Tools&amp;gt;Android&amp;gt;Android Device Monitor, under the ` Data / Data / &lt;Package Name=&quot;&quot;&gt; / files ` directory you can find the .realm file and pull it to your computer.&lt;/Package&gt;&lt;/p&gt;
 
 &lt;figure&gt;
 	&lt;a href=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png&quot;&gt;&lt;img src=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png&quot; /&gt;&lt;/a&gt;
@@ -350,78 +350,7 @@ public class RealmImporter {
 &lt;/ul&gt;
 
 &lt;p&gt;I hope you found this article useful. You can find the project here https://github.com/chronvas/RealmTesting
-or give it some &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-heart&quot;&gt;&lt;/i&gt;&lt;/a&gt; on &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub Gist Embed&lt;/h3&gt;
-
-&lt;p&gt;An example of a Gist embed below.&lt;/p&gt;
-
-&lt;noscript&gt;&lt;pre&gt;package com.example.chronvas.realmtesting.app;
-
-import android.app.Application;
-
-import com.example.chronvas.realmtesting.R;
-
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-
-import io.realm.Realm;
-import io.realm.RealmConfiguration;
-
-public class App extends Application {
-
-    @Override
-    public void onCreate() {
-        super.onCreate();
-
-        copyBundledRealmFile(this.getResources().openRawResource(R.raw.testdb), &amp;quot;testdb.realm&amp;quot;);
-
-        //Config Realm for the application
-        RealmConfiguration realmConfiguration = new RealmConfiguration.Builder(this)
-                .name(&amp;quot;testdb.realm&amp;quot;)
-                .build();
-
-        Realm.setDefaultConfiguration(realmConfiguration);
-    }
-
-    private String copyBundledRealmFile(InputStream inputStream, String outFileName) {
-        File filesDir = this.getFilesDir();
-        boolean found = findFile(outFileName, filesDir);
-        if (!found) {
-            try {
-                File file = new File(this.getFilesDir(), outFileName);
-                FileOutputStream outputStream = new FileOutputStream(file);
-                byte[] buf = new byte[1024];
-                int bytesRead;
-                while ((bytesRead = inputStream.read(buf)) &amp;gt; 0) {
-                    outputStream.write(buf, 0, bytesRead);
-                }
-                outputStream.close();
-                return file.getAbsolutePath();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
-        return null;
-    }
-
-    public boolean findFile(String name, File file) {
-        File[] list = file.listFiles();
-        if (list != null)
-            for (File fil : list) {
-                if (fil.isDirectory()) {
-                    findFile(name, fil);
-                } else if (name.equalsIgnoreCase(fil.getName())) {
-                    return true;
-                }
-            }
-        return false;
-    }
-}
-&lt;/pre&gt;&lt;/noscript&gt;
-&lt;script src=&quot;https://gist.github.com/chronvas/0e39355e36389e3992cbacc21bbe2596.js&quot;&gt; &lt;/script&gt;</content><category term="sample post" /><category term="code" /><category term="highlighting" /><summary type="html">Playing with Realm and Android.</summary></entry><entry><title type="html">Moon Jekyll Theme</title><link href="http://chronvas.github.io/what/" rel="alternate" type="text/html" title="Moon Jekyll Theme" /><published>2016-04-06T00:00:00+03:00</published><updated>2016-04-06T00:00:00+03:00</updated><id>http://chronvas.github.io/what</id><content type="html" xml:base="http://chronvas.github.io/what/">&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png&quot; alt=&quot;Moon Homepage&quot; /&gt;&lt;/p&gt;
+or give it some &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-heart&quot;&gt;&lt;/i&gt;&lt;/a&gt; on &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;</content><category term="Android" /><category term="Realm" /><category term="code" /><summary type="html">Playing with Realm and Android.</summary></entry><entry><title type="html">Moon Jekyll Theme</title><link href="http://chronvas.github.io/what/" rel="alternate" type="text/html" title="Moon Jekyll Theme" /><published>2016-04-06T00:00:00+03:00</published><updated>2016-04-06T00:00:00+03:00</updated><id>http://chronvas.github.io/what</id><content type="html" xml:base="http://chronvas.github.io/what/">&lt;p&gt;&lt;img src=&quot;https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png&quot; alt=&quot;Moon Homepage&quot; /&gt;&lt;/p&gt;
 
 &lt;center&gt;&lt;b&gt;waaaaaaaaaat&lt;/b&gt; is a minimal, one column jekyll theme.&lt;/center&gt;
 

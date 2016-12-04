@@ -3,7 +3,7 @@ layout: post
 title: Realm for Android, pre-populating from Json and extracting the database
 date: 2016-08-01
 excerpt: "Playing with Realm and Android."
-tags: [sample post, code, highlighting]
+tags: [Android, Realm, code]
 comments: false
 ---
 
@@ -67,7 +67,7 @@ On Android monitor we can view the time it took to complete, and possibly saved 
 
 ### Now, where is my .realm database file?
 
-Once you run the application to a device, in Android Studio go to Tools>Android>Android Device Monitor, under the “ Data / Data / <Package Name> / files ” directory you can find the .realm file and pull it to your computer.
+Once you run the application to a device, in Android Studio go to Tools>Android>Android Device Monitor, under the ` Data / Data / <Package Name> / files ` directory you can find the .realm file and pull it to your computer.
 
 <figure>
 	<a href="https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png"><img src="https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png"></a>
@@ -97,9 +97,3 @@ I added an overwriteDatabase flag if you want to overwrite the database every ti
 
 I hope you found this article useful. You can find the project here https://github.com/chronvas/RealmTesting
 or give it some <a class="social-btn" href="https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-heart"></i></a> on <a class="social-btn" href="https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-medium"></i></a>
-
-### GitHub Gist Embed
-
-An example of a Gist embed below.
-
-{% gist chronvas/0e39355e36389e3992cbacc21bbe2596 %}
