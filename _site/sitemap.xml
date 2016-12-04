@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
+<loc>http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/</loc>
+<lastmod>2016-08-01T00:00:00+03:00</lastmod>
+</url>
+<url>
+<loc>http://chronvas.github.io/what/</loc>
+<lastmod>2016-04-06T00:00:00+03:00</lastmod>
+</url>
+<url>
 <loc>http://chronvas.github.io/moon-theme/</loc>
 <lastmod>2016-04-06T00:00:00+03:00</lastmod>
 </url>
@@ -36,18 +44,18 @@
 <loc>http://chronvas.github.io/404</loc>
 </url>
 <url>
-<loc>http://chronvas.github.io/</loc>
-</url>
-<url>
 <loc>http://chronvas.github.io/tags/</loc>
 </url>
 <url>
-<loc>http://chronvas.github.io/projects/</loc>
+<loc>http://chronvas.github.io/</loc>
 </url>
 <url>
 <loc>http://chronvas.github.io/posts/</loc>
 </url>
 <url>
 <loc>http://chronvas.github.io/about/</loc>
+</url>
+<url>
+<loc>http://chronvas.github.io/projects/</loc>
 </url>
 </urlset>
