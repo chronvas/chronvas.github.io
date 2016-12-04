@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://chronvas.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://chronvas.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://chronvas.github.io/" rel="alternate" type="text/html" /><updated>2016-12-04T11:19:24+02:00</updated><id>http://chronvas.github.io/</id><subtitle>Moon is a minimal, one column jekyll theme for your blog.</subtitle><entry><title type="html">Realm for Android, pre-populating from Json and extracting the database</title><link href="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/" rel="alternate" type="text/html" title="Realm for Android, pre-populating from Json and extracting the database" /><published>2016-08-01T00:00:00+03:00</published><updated>2016-08-01T00:00:00+03:00</updated><id>http://chronvas.github.io/Realm for Android, pre-populating from Json and extracting the database</id><content type="html" xml:base="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/">&lt;p&gt;Scroll to read, or continue reding in &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/index&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8"?><?xml-stylesheet type="text/xml" href="http://chronvas.github.io/feed.xslt.xml"?><feed xmlns="http://www.w3.org/2005/Atom"><generator uri="http://jekyllrb.com" version="3.2.1">Jekyll</generator><link href="http://chronvas.github.io/feed.xml" rel="self" type="application/atom+xml" /><link href="http://chronvas.github.io/" rel="alternate" type="text/html" /><updated>2016-12-04T11:29:51+02:00</updated><id>http://chronvas.github.io/</id><subtitle>Moon is a minimal, one column jekyll theme for your blog.</subtitle><entry><title type="html">Realm for Android, pre-populating from Json and extracting the database</title><link href="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/" rel="alternate" type="text/html" title="Realm for Android, pre-populating from Json and extracting the database" /><published>2016-08-01T00:00:00+03:00</published><updated>2016-08-01T00:00:00+03:00</updated><id>http://chronvas.github.io/Realm for Android, pre-populating from Json and extracting the database</id><content type="html" xml:base="http://chronvas.github.io/Realm-for-Android,-pre-populating-from-Json-and-extracting-the-database/">&lt;p&gt;Scroll to read, or continue reding in &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;I’ve came across the “hustle” of creating an app that will use Realm, having the database previously populated with data and just include the created database file in the published app, omitting the Json (or any other file) that is being used to populate it.&lt;/p&gt;
 
@@ -106,6 +106,251 @@ public class App extends Application {
 }
 &lt;/pre&gt;&lt;/noscript&gt;
 &lt;script src=&quot;https://gist.github.com/chronvas/bd721b11d31cda98b61c04a6f3861d88.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now we need the Json file. A simple one for brevity reasons named “people.json” :&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;[
+  {
+    &amp;quot;Name&amp;quot;: &amp;quot;Michael&amp;quot;,
+    &amp;quot;Age&amp;quot;: 25
+  },
+  {
+    &amp;quot;Name&amp;quot;: &amp;quot;Anthony&amp;quot;,
+    &amp;quot;Age&amp;quot;: 24
+  },
+  {
+    &amp;quot;Name&amp;quot;: &amp;quot;Dana&amp;quot;,
+    &amp;quot;Age&amp;quot;: 32
+  }
+]&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/chronvas/6df49ddae05a094e9ffd8900bc251741.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;The .json file has to be placed into raw resources in order to be accessible. Create the raw resource folder if it does not exist&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm2.png&quot;&gt;&lt;img src=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm2.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The representing Java class for parsing the Json:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;package com.example.chronvas.realmtesting;
+
+import io.realm.RealmObject;
+
+public class People extends RealmObject {
+    private String Name;
+    private int Age;
+
+    public String getName() {
+        return Name;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public int getAge() {
+        return Age;
+    }
+
+    public void setAge(int age) {
+        Age = age;
+    }
+}
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/chronvas/6fa279ec3fa74c2815678350a43f34b4.js&quot;&gt; &lt;/script&gt;
+
+&lt;h3 id=&quot;ok-its-time-for-parsing&quot;&gt;Ok! It’s time for parsing&lt;/h3&gt;
+
+&lt;p&gt;Normally, we would use a helper class extending AsyncTask. But thanks to the Realm.executeTransaction we can just this built in method instead.&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;package com.example.chronvas.realmtesting;
+
+import android.content.res.Resources;
+import android.util.Log;
+
+import java.io.InputStream;
+
+import io.realm.Realm;
+
+/**
+ * From json to realm database
+ */
+public class RealmImporter {
+
+    Resources resources;
+    TransactionTime transactionTime;
+
+    public RealmImporter(Resources resources) {
+        this.resources = resources;
+    }
+
+    public void importFromJson(){
+        Realm realm = Realm.getDefaultInstance();
+
+        //transaction timer
+        transactionTime = new TransactionTime();
+        transactionTime.setStart(System.currentTimeMillis());
+
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                InputStream inputStream = resources.openRawResource(R.raw.people);
+                try {
+                    realm.createAllFromJson(People.class, inputStream);
+                    transactionTime.setEnd(System.currentTimeMillis());
+                } catch (Exception e){
+                    realm.cancelTransaction();
+                }
+
+            }
+        });
+
+        Log.d( &amp;quot;Realm&amp;quot;,&amp;quot;createAllFromJson Task completed in &amp;quot; + transactionTime.getDuration() + &amp;quot;ms&amp;quot; );
+    }
+
+}
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/chronvas/8a1e513b96716c2cf26ce84acaadd97a.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;And a simple button to call .importFromJson()&lt;/p&gt;
+
+&lt;p&gt;Keep in mind that calling importFromJson does not delete the database or the data in it, it just adds the results from the Json parsing.&lt;/p&gt;
+
+&lt;p&gt;On Android monitor we can view the time it took to complete, and possibly saved from a published app.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;E:doInBackground:: Task completed in 9ms&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;now-where-is-my-realm-database-file&quot;&gt;Now, where is my .realm database file?&lt;/h3&gt;
+
+&lt;p&gt;Once you run the application to a device, in Android Studio go to Tools&amp;gt;Android&amp;gt;Android Device Monitor, under the “ Data / Data / &lt;Package Name=&quot;&quot;&gt; / files ” directory you can find the .realm file and pull it to your computer.&lt;/Package&gt;&lt;/p&gt;
+
+&lt;figure&gt;
+	&lt;a href=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png&quot;&gt;&lt;img src=&quot;https://github.com/chronvas/chronvas.github.io/raw/master/assets/img/realm3.png&quot; /&gt;&lt;/a&gt;
+&lt;/figure&gt;
+
+&lt;h3 id=&quot;did-it-work&quot;&gt;Did it work?&lt;/h3&gt;
+
+&lt;p&gt;You can add another button for simplicity to return the number of Persons found in the database. The code of the two simple buttons could look like this:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;Button importbtn = (Button) findViewById(R.id.importbtn);
+        importbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RealmImporter realmImporter = new RealmImporter(getResources());
+                realmImporter.importFromJson();
+            }
+        });
+
+        Button countbtn = (Button) findViewById(R.id.count);
+        countbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                realm = Realm.getDefaultInstance();
+
+                int people = realm.where(People.class).findAll().size();
+                if (people&amp;gt;0) {
+                    Snackbar.make(view, &amp;quot;Found: &amp;quot; + people + &amp;quot; people in the database&amp;quot;, Snackbar.LENGTH_LONG).show();
+                }else {
+                    Snackbar.make(view, &amp;quot;Found no people in the database!&amp;quot;, Snackbar.LENGTH_LONG).show();
+                }
+
+            }
+        });&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/chronvas/c9dee7f65198ff05fdba8a6952735b8c.js&quot;&gt; &lt;/script&gt;
+
+&lt;p&gt;Now just take the .realm file and place it under raw resources again to be used as the database.&lt;/p&gt;
+
+&lt;h3 id=&quot;on-the-to-be-published-app&quot;&gt;On the “to be published” app&lt;/h3&gt;
+
+&lt;p&gt;Just put the .realm file in the raw resource directory and copy it to the appropriate place (FilesDir) using copyBundledRealmFile method on App.java .&lt;/p&gt;
+
+&lt;p&gt;I added an overwriteDatabase flag if you want to overwrite the database every time the app starts with a fresh one, or just keep the one that copyBundledRealmFile created the first time the app ran:&lt;/p&gt;
+
+&lt;noscript&gt;&lt;pre&gt;    package com.example.chronvas.realmtesting.app;
+
+    import android.app.Application;
+
+    import com.example.chronvas.realmtesting.R;
+
+    import java.io.File;
+    import java.io.FileOutputStream;
+    import java.io.IOException;
+    import java.io.InputStream;
+
+    import io.realm.Realm;
+    import io.realm.RealmConfiguration;
+
+    public class App extends Application {
+
+        @Override
+        public void onCreate() {
+            super.onCreate();
+
+            //Set true to overwrite database - Optional
+            boolean overwriteDatabase = false;
+
+            if (overwriteDatabase){
+                copyBundledRealmFile(this.getResources().openRawResource(R.raw.testdb), &amp;quot;testdb.realm&amp;quot;);
+            }else{
+                //check if the db is already in place
+                if (!fileFound(&amp;quot;testdb.realm&amp;quot;, this.getFilesDir())){
+                    copyBundledRealmFile(this.getResources().openRawResource(R.raw.testdb), &amp;quot;testdb.realm&amp;quot;);
+                }
+            }
+
+            //Config Realm for the application
+            Realm.init(this);
+            RealmConfiguration realmConfiguration = new RealmConfiguration.Builder()
+                    .name(&amp;quot;testdb.realm&amp;quot;)
+                    .build();
+
+            Realm.setDefaultConfiguration(realmConfiguration);
+        }
+
+        private String copyBundledRealmFile(InputStream inputStream, String outFileName) {
+            try {
+                File file = new File(this.getFilesDir(), outFileName);
+                FileOutputStream outputStream = new FileOutputStream(file);
+                byte[] buf = new byte[1024];
+                int bytesRead;
+                while ((bytesRead = inputStream.read(buf)) &amp;gt; 0) {
+                    outputStream.write(buf, 0, bytesRead);
+                }
+                outputStream.close();
+                return file.getAbsolutePath();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        public boolean fileFound(String name, File file) {
+            File[] list = file.listFiles();
+            if (list != null)
+                for (File fil : list) {
+                    if (fil.isDirectory()) {
+                        fileFound(name, fil);
+                    } else if (name.equalsIgnoreCase(fil.getName())) {
+                        return true;
+                    }
+                }
+            return false;
+        }
+    }
+&lt;/pre&gt;&lt;/noscript&gt;
+&lt;script src=&quot;https://gist.github.com/chronvas/c1c028ddc1670b39c2751598e4300d22.js&quot;&gt; &lt;/script&gt;
+
+&lt;h3 id=&quot;keep-in-mind&quot;&gt;Keep in mind!&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;With the overwriteDatabase flag set to true, every time your application starts, it copies or overwrites the .realm database from raw directory to the /files directory, so keep in mind that whatever change you make it is going to be lost upon App.java call. In order to demonstrate the “problem” I have added 2 more buttons to change and query the name of the first person. In order to avoid this, set the flag to false, which makes a file existence check before writing the .realm file.&lt;/li&gt;
+  &lt;li&gt;The .realm file still has 2 instances. In the raw resource directory and in the /files directory. So saving space is not done in fully.&lt;/li&gt;
+  &lt;li&gt;Don’t forget to use the correct data model when you read the database, or a realm migration if needed.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope you found this article useful. You can find the project here https://github.com/chronvas/RealmTesting
+or give it some &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-heart&quot;&gt;&lt;/i&gt;&lt;/a&gt; on &lt;a class=&quot;social-btn&quot; href=&quot;https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;&lt;i class=&quot;fa fa-fw fa-medium&quot;&gt;&lt;/i&gt;&lt;/a&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;github-gist-embed&quot;&gt;GitHub Gist Embed&lt;/h3&gt;
 
