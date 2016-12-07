@@ -5,7 +5,6 @@ date: 2016-08-01
 excerpt: "Playing with Realm and Android."
 tags: [Android, Realm, code]
 comments: false
-project: false
 ---
 
 Scroll to read, or continue reding in <a class="social-btn" href="https://medium.com/@chron.vas/realm-for-android-pre-populating-from-json-and-extracting-the-database-8709a2f8db18" target="_blank" rel="noopener noreferrer"><i class="fa fa-fw fa-medium"></i></a>
