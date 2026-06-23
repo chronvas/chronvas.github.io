@@ -1,0 +1,47 @@
+baseURL: https://chronvas.com/
+defaultContentLanguage: en
+title: Vasileios Chroniadis blog
+theme: PaperMod
+
+params:
+  env: production
+  showReadingTime: true
+  displayFullContent: false
+  ShowPostNavLinks: true
+  profileMode:
+    enabled: true
+    title: Vasileios Chroniadis
+    subtitle: Welcome to my personal blog!
+    imageUrl: img/other/vas.jpg
+    imageTitle: ""
+    imageWidth: 120
+    imageHeight: 120
+    buttons:
+      - name: Posts
+        url: /posts/
+  socialIcons: # optional
+    - name: "Github"
+      url: "https://github.com/chronvas"
+    - name: "LinkedIn"
+      url: "https://linkedin.com/in/chronvas"
+    - name: "StackOverflow"
+      url: "https://stackoverflow.com/users/5932049/ch-vas"
+    - name: "Medium"
+      url: "https://medium.com/@chronvas"
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+languages:
+  en:
+    label: English
+    weight: 1
+    contentDir: content
+
+menu:
+  main:
+    - name: About
+      url: /about/
+      weight: 10

@@ -3,4 +3,9 @@ assets/.DS_Store
 .idea
 .junie
 /.junie
-
+public
+.ignore
+.hugo_build.lock
+scratch/
+docs/
+AGENTS.md
